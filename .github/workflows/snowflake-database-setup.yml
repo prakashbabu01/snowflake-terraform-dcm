@@ -8,6 +8,7 @@ on:
 jobs:
   snowflake-terraform-db:
     name: "Snowflake Terraform databasesetup"
+    environment: prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,7 +17,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
         with:
-          cli_config_credentials_token: ${{ secrets.prod.TERRAFORM_API_KEY }}
+          cli_config_credentials_token: ${{ secrets.TERRAFORM_API_KEY }}
 
       - name: Terraform Format
         id: fmt
