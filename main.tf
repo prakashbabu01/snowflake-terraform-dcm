@@ -19,6 +19,7 @@ terraform {
 
 provider "snowflake" {
 
+
 }
 
 resource "snowflake_database" "mysnowdb" {
